@@ -131,7 +131,7 @@
             android:visibility="gone"
             app:constraint_referenced_ids="resendMsgTv,resendOtpTv" />
 
-        <in.bharat.otptextview.OtpTextView
+        <com.nickelfox.otptextview.OtpTextView
             android:id="@+id/otpView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

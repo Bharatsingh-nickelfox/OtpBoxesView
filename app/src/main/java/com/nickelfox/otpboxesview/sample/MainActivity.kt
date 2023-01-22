@@ -1,6 +1,6 @@
 package com.nickelfox.otpboxesview.sample
 
-import `in`.bharat.otptextview.OTPListener
+import com.nickelfox.otptextview.OTPListener
 import android.content.Context
 import android.os.Bundle
 import android.view.View

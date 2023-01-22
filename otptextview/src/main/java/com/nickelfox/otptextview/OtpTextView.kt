@@ -1,4 +1,4 @@
-package `in`.bharat.otptextview
+package com.nickelfox.otptextview
 
 import android.annotation.SuppressLint
 import android.content.Context

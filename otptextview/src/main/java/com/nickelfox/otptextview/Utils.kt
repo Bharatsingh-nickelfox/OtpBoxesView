@@ -1,4 +1,4 @@
-package `in`.bharat.otptextview
+package com.nickelfox.otptextview
 
 import android.content.Context
 import android.util.TypedValue
