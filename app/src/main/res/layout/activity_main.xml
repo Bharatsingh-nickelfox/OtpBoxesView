@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context="com.nickelfox.otpboxesview.sample.MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".ui.onboarding.otp.OtpFragment">
+
+        <ImageView
+            android:id="@+id/phoneImg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_77"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/enterOtpTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_16"
+            android:text="@string/enter_otp"
+            android:textColor="@color/colorAccent"
+            app:layout_constraintEnd_toEndOf="@id/phoneImg"
+            app:layout_constraintStart_toStartOf="@id/phoneImg"
+            app:layout_constraintTop_toBottomOf="@id/phoneImg" />
+
+        <TextView
+            android:id="@+id/verificationLabelTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_16"
+            android:text="@string/verification_msg"
+            android:textAlignment="center"
+            android:textColor="@color/colorSecondaryText"
+            app:layout_constraintEnd_toEndOf="@id/enterOtpTv"
+            app:layout_constraintStart_toStartOf="@id/enterOtpTv"
+            app:layout_constraintTop_toBottomOf="@id/enterOtpTv" />
+
+
+        <TextView
+            android:id="@+id/timerTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_35"
+            android:padding="@dimen/dp_10"
+            android:textAlignment="center"
+            android:textColor="@color/colorSecondaryText"
+            app:layout_constraintEnd_toEndOf="@id/otpView"
+            app:layout_constraintStart_toStartOf="@id/otpView"
+            app:layout_constraintTop_toBottomOf="@id/otpView"
+            tools:text="01:40" />
+
+        <TextView
+            android:id="@+id/resendMsgTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/did_not_receive_otp"
+            android:textAlignment="center"
+            android:textColor="@color/colorSecondaryText"
+            app:layout_constraintBottom_toBottomOf="@+id/resendOtpTv"
+            app:layout_constraintEnd_toStartOf="@id/resendOtpTv"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="@+id/otpView"
+            app:layout_constraintTop_toTopOf="@id/resendOtpTv" />
+
+        <TextView
+            android:id="@+id/resendOtpTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_35"
+            android:padding="@dimen/dp_10"
+            android:text="@string/resend_now"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="@+id/otpView"
+            app:layout_constraintStart_toEndOf="@id/resendMsgTv"
+            app:layout_constraintTop_toBottomOf="@+id/otpView" />
+
+        <TextView
+            android:id="@+id/wrongOtpTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_5"
+            android:text="@string/otp_validation"
+            android:textAlignment="center"
+            android:textColor="@color/red"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="@id/otpView"
+            app:layout_constraintTop_toBottomOf="@id/otpView" />
+
+        <ViewFlipper
+            android:id="@+id/viewFlipper"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="@dimen/dp_35"
+            android:layout_marginBottom="@dimen/dp_35"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/timerTv"
+            app:layout_constraintVertical_bias="1.0"
+            app:layout_constraintWidth_percent=".6">
+
+            <Button
+                android:id="@+id/verifyOtpBtn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:enabled="false"
+                android:text="@string/verify" />
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:indeterminateTint="@color/colorPrimary" />
+        </ViewFlipper>
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/llResend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="resendMsgTv,resendOtpTv" />
+
+        <in.bharat.otptextview.OtpTextView
+            android:id="@+id/otpView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:textColor="@color/colorAccent"
+            app:height="@dimen/dp_50"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/verificationLabelTv"
+            app:length="6"
+            app:otp_box_background="@drawable/bg_outlined_edittext"
+            app:otp_box_background_error="@drawable/bg_outlined_edittext_error"
+            app:otp_box_background_success="@drawable/bg_outlined_edittext_selected"
+            app:otp_text_size="@dimen/sp_20"
+            app:width="@dimen/dp_50" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

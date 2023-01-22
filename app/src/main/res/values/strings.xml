@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">OtpBoxesView</string>
+
+    <string name="otp_validation">Invalid or incorrect OTP</string>
+    <string name="resend_now">Resend Now</string>
+    <string name="send_otp">Send OTP</string>
+    <string name="enter_otp">Enter OTP</string>
+    <string name="verification_msg">We have sent a 6-digit verification code to you at </string>
+    <string name="did_not_receive_otp">Didn\'t receive your code?</string>
+    <string name="verify">Verify</string>
+    <string name="change_number">Change Number</string>
+</resources>
