@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace 'com.bharat.otpboxesview.sample'
+    namespace 'com.nickelfox.otpboxesview.sample'
     compileSdk 33
 
     defaultConfig {
